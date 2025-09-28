@@ -1,0 +1,61 @@
+﻿빌드 시작...
+1>------ 빌드 시작: 프로젝트: MathModule, 구성: Debug x64 ------
+1>Precompiled.cpp
+1>Box.cpp
+1>Circle.cpp
+1>Color32.cpp
+1>Frustum.cpp
+1>LinearColor.cpp
+1>Math.cpp
+1>Matrix2x2.cpp
+1>Matrix3x3.cpp
+1>Matrix4x4.cpp
+1>Plane.cpp
+1>Quaternion.cpp
+1>Rectangle.cpp
+1>Rotator.cpp
+1>Sphere.cpp
+1>Transform.cpp
+1>Vector2.cpp
+1>Vector3.cpp
+1>Vector4.cpp
+1>코드를 생성하고 있습니다...
+1>MathModule.vcxproj -> C:\soongsil projects\GameMath\Output\Windows\Library\Debug\MathModule.lib
+2>------ 빌드 시작: 프로젝트: RendererModule, 구성: Debug x64 ------
+2>Precompiled.cpp
+2>Shader.cpp
+2>Vertex.cpp
+2>PerspectiveTest.cpp
+2>WindowsGDI.cpp
+2>WindowsRSI.cpp
+2>코드를 생성하고 있습니다...
+2>Shader.cpp
+2>Vertex.cpp
+2>RendererModule.vcxproj -> C:\soongsil projects\GameMath\Output\Windows\Library\Debug\RendererModule.lib
+3>------ 빌드 시작: 프로젝트: EngineModule, 구성: Debug x64 ------
+3>Precompiled.cpp
+3>CameraObject.cpp
+3>GameEngine.cpp
+3>GameObject.cpp
+3>Mesh.cpp
+3>TransformComponent.cpp
+3>Bone.cpp
+3>InputManager.cpp
+3>Texture.cpp
+3>코드를 생성하고 있습니다...
+3>CameraObject.cpp
+3>GameEngine.cpp
+3>GameObject.cpp
+3>Mesh.cpp
+3>TransformComponent.cpp
+3>EngineModule.vcxproj -> C:\soongsil projects\GameMath\Output\Windows\Library\Debug\EngineModule.lib
+4>------ 빌드 시작: 프로젝트: SoftRendererPlayer, 구성: Debug x64 ------
+4>Precompiled.cpp
+4>SystemInputManager.cpp
+4>SoftRenderer.cpp
+4>SoftRenderer2D.cpp
+4>SoftRenderer3D.cpp
+4>WindowsApp.cpp
+4>코드를 생성하고 있습니다...
+4>SoftRendererPlayer.vcxproj -> C:\soongsil projects\GameMath\Output\Windows\Binary\Debug\SoftRendererPlayer.exe
+========== 빌드: 성공 4, 실패 0, 최신 0, 생략 0 ==========
