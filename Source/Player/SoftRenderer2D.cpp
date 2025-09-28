@@ -1,27 +1,27 @@
-ï»¿
+
 #include "Precompiled.h"
 #include "SoftRenderer.h"
 #include <random>
 using namespace CK::DD;
 
-// ê²©ìë¥¼ ê·¸ë¦¬ëŠ” í•¨ìˆ˜
+// °İÀÚ¸¦ ±×¸®´Â ÇÔ¼ö
 void SoftRenderer::DrawGizmo2D()
 {
 	auto& r = GetRenderer();
 	const auto& g = Get2DGameEngine();
 
-	// ê·¸ë¦¬ë“œ ìƒ‰ìƒ
+	// ±×¸®µå »ö»ó
 	LinearColor gridColor(LinearColor(0.8f, 0.8f, 0.8f, 0.3f));
 
-	// ë·°ì˜ ì˜ì—­ ê³„ì‚°
+	// ºäÀÇ ¿µ¿ª °è»ê
 	Vector2 viewPos = g.GetMainCamera().GetTransform().GetPosition();
 	Vector2 extent = Vector2(_ScreenSize.X * 0.5f, _ScreenSize.Y * 0.5f);
 
-	// ì¢Œì¸¡ í•˜ë‹¨ì—ì„œë¶€í„° ê²©ì ê·¸ë¦¬ê¸°
+	// ÁÂÃø ÇÏ´Ü¿¡¼­ºÎÅÍ °İÀÚ ±×¸®±â
 	int xGridCount = _ScreenSize.X / _Grid2DUnit;
 	int yGridCount = _ScreenSize.Y / _Grid2DUnit;
 
-	// ê·¸ë¦¬ë“œê°€ ì‹œì‘ë˜ëŠ” ì¢Œí•˜ë‹¨ ì¢Œí‘œ ê°’ ê³„ì‚°
+	// ±×¸®µå°¡ ½ÃÀÛµÇ´Â ÁÂÇÏ´Ü ÁÂÇ¥ °ª °è»ê
 	Vector2 minPos = viewPos - extent;
 	Vector2 minGridPos = Vector2(ceilf(minPos.X / (float)_Grid2DUnit), ceilf(minPos.Y / (float)_Grid2DUnit)) * (float)_Grid2DUnit;
 	ScreenPoint gridBottomLeft = ScreenPoint::ToScreenCoordinate(_ScreenSize, minGridPos - viewPos);
@@ -41,84 +41,57 @@ void SoftRenderer::DrawGizmo2D()
 	r.DrawFullVerticalLine(worldOrigin.X, LinearColor::Green);
 }
 
-// ê²Œì„ ì˜¤ë¸Œì íŠ¸ ëª©ë¡
+// °ÔÀÓ ¿ÀºêÁ§Æ® ¸ñ·Ï
 
 
-// ìµœì´ˆ ì”¬ ë¡œë”©ì„ ë‹´ë‹¹í•˜ëŠ” í•¨ìˆ˜
+// ÃÖÃÊ ¾À ·ÎµùÀ» ´ã´çÇÏ´Â ÇÔ¼ö
 void SoftRenderer::LoadScene2D()
 {
-	// ìµœì´ˆ ì”¬ ë¡œë”©ì—ì„œ ì‚¬ìš©í•˜ëŠ” ëª¨ë“ˆ ë‚´ ì£¼ìš” ë ˆí¼ëŸ°ìŠ¤
+	// ÃÖÃÊ ¾À ·Îµù¿¡¼­ »ç¿ëÇÏ´Â ¸ğµâ ³» ÁÖ¿ä ·¹ÆÛ·±½º
 	auto& g = Get2DGameEngine();
 
 }
 
-// ê²Œì„ ë¡œì§ê³¼ ë Œë”ë§ ë¡œì§ì´ ê³µìœ í•˜ëŠ” ë³€ìˆ˜
+// °ÔÀÓ ·ÎÁ÷°ú ·»´õ¸µ ·ÎÁ÷ÀÌ °øÀ¯ÇÏ´Â º¯¼ö
 Vector2 currentPosition(100.f, 100.f);
 
-// ê²Œì„ ë¡œì§ì„ ë‹´ë‹¹í•˜ëŠ” í•¨ìˆ˜
+// °ÔÀÓ ·ÎÁ÷À» ´ã´çÇÏ´Â ÇÔ¼ö
 void SoftRenderer::Update2D(float InDeltaSeconds)
 {
-	// ê²Œì„ ë¡œì§ì—ì„œ ì‚¬ìš©í•˜ëŠ” ëª¨ë“ˆ ë‚´ ì£¼ìš” ë ˆí¼ëŸ°ìŠ¤
+	// °ÔÀÓ ·ÎÁ÷¿¡¼­ »ç¿ëÇÏ´Â ¸ğµâ ³» ÁÖ¿ä ·¹ÆÛ·±½º
 	auto& g = Get2DGameEngine();
 	const InputManager& input = g.GetInputManager();
 
-	// ê²Œì„ ë¡œì§ì˜ ë¡œì»¬ ë³€ìˆ˜
+	// °ÔÀÓ ·ÎÁ÷ÀÇ ·ÎÄÃ º¯¼ö
 	static float moveSpeed = 100.f;
 
-	Vector2 inputVector = Vector2(input.GetAxis(InputAxis::XAxis), input.GetAxis(InputAxis::YAxis)).GetNormalize();
+	Vector2 inputVector = Vector2(input.GetAxis(InputAxis::XAxis), input.GetAxis(InputAxis::YAxis));
 	Vector2 deltaPosition = inputVector * moveSpeed * InDeltaSeconds;
 
-	// ë¬¼ì²´ì˜ ìµœì¢… ìƒíƒœ ì„¤ì •
+	// ¹°Ã¼ÀÇ ÃÖÁ¾ »óÅÂ ¼³Á¤
 	currentPosition += deltaPosition;
 }
 
-// ë Œë”ë§ ë¡œì§ì„ ë‹´ë‹¹í•˜ëŠ” í•¨ìˆ˜
+// ·»´õ¸µ ·ÎÁ÷À» ´ã´çÇÏ´Â ÇÔ¼ö
 void SoftRenderer::Render2D()
 {
-	// ë Œë”ë§ ë¡œì§ì—ì„œ ì‚¬ìš©í•˜ëŠ” ëª¨ë“ˆ ë‚´ ì£¼ìš” ë ˆí¼ëŸ°ìŠ¤
+	// ·»´õ¸µ ·ÎÁ÷¿¡¼­ »ç¿ëÇÏ´Â ¸ğµâ ³» ÁÖ¿ä ·¹ÆÛ·±½º
 	auto& r = GetRenderer();
 	const auto& g = Get2DGameEngine();
 
-	// ë°°ê²½ì— ê²©ì ê·¸ë¦¬ê¸°
+	// ¹è°æ¿¡ °İÀÚ ±×¸®±â
 	DrawGizmo2D();
 
-	// ë Œë”ë§ ë¡œì§ì˜ ë¡œì»¬ ë³€ìˆ˜
-	static float radius = 30.f; 
-	static std::vector<Vector2> circles;
+	// ·»´õ¸µ ·ÎÁ÷ÀÇ ·ÎÄÃ º¯¼ö
 
-	// ìµœì´ˆì— í•œ ë²ˆ ë°˜ì§€ë¦„ë³´ë‹¤ ê¸´ ë²¡í„°ë¥¼ ëª¨ì•„ ì»¨í…Œì´ë„ˆì— ë‹´ëŠ”ë‹¤.
-	if (circles.empty())
-	{
-		for (float x = -radius; x <= radius; ++x)
-		{
-			for (float y = -radius; y <= radius; ++y)
-			{
-				Vector2 pointToTest = Vector2(x, y);
-				float squaredLength = pointToTest.SizeSquared();
-				if (squaredLength <= radius * radius)
-				{
-					circles.push_back(Vector2(x, y));
-				}
-			}
-		}
-	}
-
-	// ì›ì„ êµ¬ì„±í•˜ëŠ” ë²¡í„°ë¥¼ ëª¨ë‘ ë¶‰ì€ìƒ‰ìœ¼ë¡œ í‘œì‹œí•œë‹¤.
-	for (auto const& v : circles)
-	{
-		r.DrawPoint(v + currentPosition, LinearColor::Red);
-	}
-
-	// ì›ì˜ ì¤‘ì‹¬ ì¢Œí‘œë¥¼ ìš°ìƒë‹¨ì— ì¶œë ¥
-	r.PushStatisticText("Coordinate : " + currentPosition.ToString());
 }
 
-// ë©”ì‹œë¥¼ ê·¸ë¦¬ëŠ” í•¨ìˆ˜
+// ¸Ş½Ã¸¦ ±×¸®´Â ÇÔ¼ö
 void SoftRenderer::DrawMesh2D(const class DD::Mesh& InMesh, const Matrix3x3& InMatrix, const LinearColor& InColor)
 {
 }
 
-// ì‚¼ê°í˜•ì„ ê·¸ë¦¬ëŠ” í•¨ìˆ˜
+// »ï°¢ÇüÀ» ±×¸®´Â ÇÔ¼ö
 void SoftRenderer::DrawTriangle2D(std::vector<DD::Vertex2D>& InVertices, const LinearColor& InColor, FillMode InFillMode)
 {
 }
