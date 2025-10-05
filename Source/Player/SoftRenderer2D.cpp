@@ -110,9 +110,13 @@ void SoftRenderer::Render2D()
 		}
 	}
 
+	// 각 값을 초기화한 후 색상을 증가시키면서 점에 대응
+	rad = 0.f;
 	for (auto const& v : hearts)
 	{
-		r.DrawPoint(v * currentScale + currentPosition, LinearColor::Blue);
+		hsv.H = rad / Math::TwoPI; // [0, 2π]범위를 [0, 1]범위로 바꾸기
+		r.DrawPoint(v * currentScale + currentPosition, hsv.ToLinearColor());
+		rad += increment;
 	}
 
 	// 현재 위치와 스케일을 화면에 출력
