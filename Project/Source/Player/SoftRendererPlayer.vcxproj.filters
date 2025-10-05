@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\soongsil projects\GameMath\Source\Player\Precompiled.cpp" />
+    <ClCompile Include="C:\soongsil projects\GameMath\Source\Player\Private\SystemInputManager.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\soongsil projects\GameMath\Source\Player\SoftRenderer.cpp" />
+    <ClCompile Include="C:\soongsil projects\GameMath\Source\Player\SoftRenderer2D.cpp" />
+    <ClCompile Include="C:\soongsil projects\GameMath\Source\Player\SoftRenderer3D.cpp" />
+    <ClCompile Include="C:\soongsil projects\GameMath\Source\Player\Private\Windows\WindowsApp.cpp">
+      <Filter>Private\Windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\soongsil projects\GameMath\Source\Player\Precompiled.h" />
+    <ClInclude Include="C:\soongsil projects\GameMath\Source\Player\SoftRenderer.h" />
+    <ClInclude Include="C:\soongsil projects\GameMath\Source\Player\SystemInputManager.h" />
+    <ClInclude Include="C:\soongsil projects\GameMath\Source\Player\Private\Windows\Res\resource.h">
+      <Filter>Private\Windows\Res</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\soongsil projects\GameMath\Source\Player\Private\Windows\WindowsPlayer.h">
+      <Filter>Private\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\soongsil projects\GameMath\Source\Player\Private\Windows\WindowsUtil.h">
+      <Filter>Private\Windows</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\soongsil projects\GameMath\Source\Player\Private\Windows\Res\player.ico">
+      <Filter>Private\Windows\Res</Filter>
+    </None>
+    <None Include="C:\soongsil projects\GameMath\Source\Player\Private\Windows\Res\player_small.ico">
+      <Filter>Private\Windows\Res</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\soongsil projects\GameMath\Source\Player\Private\Windows\Res\player.rc">
+      <Filter>Private\Windows\Res</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Private">
+      <UniqueIdentifier>{3F991D0B-8773-3394-AC78-BCF4CEDC294D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Windows">
+      <UniqueIdentifier>{AFB46EC5-8376-3D95-BC93-B5B4E48A0F60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Windows\Res">
+      <UniqueIdentifier>{1CAD1B03-BBC1-38EB-B43A-640084F4CF7F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
