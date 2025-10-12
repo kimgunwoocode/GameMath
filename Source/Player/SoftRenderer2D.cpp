@@ -115,6 +115,8 @@ void SoftRenderer::Render2D()
 	}
 
 	// 회전 변환행렬의 기저벡터와 행렬
+	float sin, cos;
+	Math::GetSinCos(sin, cos, currentDegree);
 	Vector2 rBasis1(cos, sin);
 	Vector2 rBasis2(-sin, cos);
 	Matrix2x2 rMatrix(rBasis1, rBasis2);
@@ -137,7 +139,7 @@ void SoftRenderer::Render2D()
 		Vector2 translatedV = transformedV + currentPosition;
 
 		hsv.H = rad / Math::TwoPI;
-		r.DrawPoint(v, hsv.ToLinearColor());
+		r.DrawPoint(translatedV, hsv.ToLinearColor());
 		rad += increment;
 	}
 

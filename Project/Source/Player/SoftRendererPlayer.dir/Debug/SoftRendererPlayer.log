@@ -1,9 +1,2 @@
 ﻿  SoftRenderer2D.cpp
-C:\soongsil projects\GameMath\Source\Player\SoftRenderer2D.cpp(118,26): error C2664: 'CK::Vector2::Vector2(int,int)': 인수 1을(를) 'overloaded-function'에서 'int'(으)로 변환할 수 없습니다.
-C:\soongsil projects\GameMath\Source\Player\SoftRenderer2D.cpp(118,18): message : 컨텍스트는 오버로드 함수의 명확성을 고려할 수 없습니다.
-C:\soongsil projects\GameMath\Source\Runtime\Math\Public\Vector2.h(11,2): message : 'CK::Vector2::Vector2' 선언을 참조하십시오.
-C:\soongsil projects\GameMath\Source\Player\SoftRenderer2D.cpp(119,18): error C2244: 'sin': 함수 정의를 기존 선언과 일치시킬 수 없습니다.
-C:\soongsil projects\GameMath\Source\Player\SoftRenderer2D.cpp(119,27): error C2664: 'CK::Vector2::Vector2(const CK::Vector2 &)': 인수 1을(를) 'overloaded-function'에서 'const CK::Vector2 &'(으)로 변환할 수 없습니다.
-C:\soongsil projects\GameMath\Source\Player\SoftRenderer2D.cpp(119,27): message : 원인: 'overloaded-function'에서 'const CK::Vector2'(으)로 변환할 수 없습니다.
-C:\soongsil projects\GameMath\Source\Player\SoftRenderer2D.cpp(119,27): message : 소스 형식을 가져올 수 있는 생성자가 없거나 생성자 오버로드 확인이 모호합니다.
-C:\soongsil projects\GameMath\Source\Runtime\Math\Public\Vector2.h(60,1): message : 'CK::Vector2::Vector2' 선언을 참조하십시오.
+  SoftRendererPlayer.vcxproj -> C:\soongsil projects\GameMath\Output\Windows\Binary\Debug\SoftRendererPlayer.exe
