@@ -63,6 +63,7 @@ void SoftRenderer::Update2D(float InDeltaSeconds)
 	// 게임 로직에서 사용하는 모듈 내 주요 레퍼런스
 	auto& g = Get2DGameEngine();
 	const InputManager& input = g.GetInputManager();
+    const auto& texture = g.GetTexture(GameEngine::BaseTexture);
 
 	// 게임 로직의 로컬 변수
 	static float moveSpeed = 100.f;
